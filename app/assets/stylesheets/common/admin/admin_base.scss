@@ -1206,6 +1206,7 @@ a.inline-editable-field {
 }
 
 // Styles for subtabs in admin
+@import "common/admin/branding";
 @import "common/admin/dashboard";
 @import "common/admin/sidebar";
 @import "common/admin/settings";

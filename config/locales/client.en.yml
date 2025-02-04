@@ -5184,6 +5184,56 @@ en:
         logo:
           title: "Site logo"
           header_description: "Customize the variations of your site logo"
+        branding:
+          title: "Branding"
+          logo:
+            title: "Logo"
+            form:
+              logo:
+                title: "Primary logo"
+                description: "Appears on the site's top navigation, as well as the top of the site's Email Notifications."
+                help_text: "Recommended size is 600 x 80 pixels"
+              logo_dark:
+                required: "Use a different logo for dark mode?"
+                title: "Primary logo dark"
+                help_text: "Recommended size is 600 x 80 pixels"
+              large_icon:
+                title: "Square icon"
+                description: "A squared version of the logo image appears at the top of the administration and is also the mobile home screen app logo."
+                help_text: "Recommended size is 512 x 512 pixels"
+              square_icon_dark:
+                required: "Use a different square icon for dark mode?"
+                title: "Square icon dark"
+                help_text: "Recommended size is 512 x 512 pixels"
+              favicon:
+                title: "Favicon"
+                description: "The logo will appear as the icon in the browser tab and the browser favorites/bookmarks."
+              logo_small:
+                title: "Small logo"
+                description: "The small logo image at the top left of your site, seen when scrolling down. If left blank, a home glyph will be shown."
+                help_text: "Recommended size is 120 x 120 pixels"
+              logo_small_dark:
+                required: "Use a different small logo for dark mode?"
+                title: "Small logo dark"
+                help_text: "Recommended size is 120 x 120 pixels"
+              mobile: "Mobile"
+              email: "Email"
+              social_media: "Social media"
+              mobile_logo:
+                title: "Mobile logo"
+                description: "The logo used on mobile version of your site. If left blank, the image from the `logo` setting will be used."
+                help_text: "Use a wide rectangular image with a height of 120 and an aspect ratio greater than 3:1."
+              mobile_logo_dark:
+                required: "Use a different mobile logo for dark mode?"
+                title: "Mobile logo dark"
+                help_text: "Use a wide rectangular image with a height of 120 and an aspect ratio greater than 3:1."
+              manifest_icon:
+                title: "Manifest icon"
+                description: "Image used as logo/splash image on Android. If left blank, large_icon will be used."
+                help_text: "Will be automatically resized to 512 × 512."
+              manifest_screenshots:
+                title: "Manifest screenshots"
+                description: "Screenshots that showcase your instance features and functionality on its install prompt page. All images should be local uploads and of the same dimensions."
         navigation:
           title: "Navigation"
           header_description: "Configure the navigation links and menu items for your site. This includes the location and behavior of the primary navigation menu, the quick links at the top of the homepage, as well as the admin sidebar"

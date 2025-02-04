@@ -409,6 +409,9 @@ Discourse::Application.routes.draw do
         get "trust-levels" => "site_settings#index"
         get "group-permissions" => "site_settings#index"
 
+        #TODO
+        get "branding" => "site_settings#index"
+
         resources :flags, only: %i[index new create update destroy] do
           put "toggle"
           put "reorder/:direction" => "flags#reorder"

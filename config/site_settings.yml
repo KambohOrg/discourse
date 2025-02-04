@@ -125,10 +125,12 @@ branding:
     type: upload
   manifest_icon:
     default: ""
+    client: true
     type: upload
   manifest_screenshots:
     type: list
     list_type: simple
+    client: true
     default: ""
   favicon:
     default: ""

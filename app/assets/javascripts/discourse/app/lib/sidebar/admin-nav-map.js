@@ -115,6 +115,12 @@ export const ADMIN_NAV_MAP = [
         icon: "italic",
       },
       {
+        name: "admin_branding",
+        route: "adminConfig.branding",
+        label: "admin.config.branding.title",
+        icon: "fab-discourse",
+      },
+      {
         name: "admin_site_logo",
         route: "adminConfig.logo.settings",
         label: "admin.appearance.sidebar_link.site_logo",

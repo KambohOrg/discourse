@@ -386,41 +386,42 @@ class Upload < ActiveRecord::Base
         color = ""
       end
 
-      color ||=
-        begin
-          data =
-            Discourse::Utils.execute_command(
-              "nice",
-              "-n",
-              "10",
-              "convert",
-              local_path,
-              "-depth",
-              "8",
-              "-resize",
-              "1x1",
-              "-define",
-              "histogram:unique-colors=true",
-              "-format",
-              "%c",
-              "histogram:info:",
-              timeout: DOMINANT_COLOR_COMMAND_TIMEOUT_SECONDS,
-            )
-
-          # Output format:
-          # 1: (110.873,116.226,93.8821) #6F745E srgb(43.4798%,45.5789%,36.8165%)
-
-          color = data[/#([0-9A-F]{6})/, 1]
-
-          raise "Calculated dominant color but unable to parse output:\n#{data}" if color.nil?
-
-          color
-        rescue Discourse::Utils::CommandError => e
-          # Timeout or unable to parse image
-          # This can happen due to bad user input - ignore and save
-          # an empty string to prevent re-evaluation
-          ""
-        end
+      # color ||=
+      #   begin
+      #     data =
+      #       Discourse::Utils.execute_command(
+      #         "nice",
+      #         "-n",
+      #         "10",
+      #         "convert",
+      #         local_path,
+      #         "-depth",
+      #         "8",
+      #         "-resize",
+      #         "1x1",
+      #         "-define",
+      #         "histogram:unique-colors=true",
+      #         "-format",
+      #         "%c",
+      #         "histogram:info:",
+      #         timeout: DOMINANT_COLOR_COMMAND_TIMEOUT_SECONDS,
+      #       )
+      #
+      #     # Output format:
+      #     # 1: (110.873,116.226,93.8821) #6F745E srgb(43.4798%,45.5789%,36.8165%)
+      #
+      #     color = data[/#([0-9A-F]{6})/, 1]
+      #
+      #     raise "Calculated dominant color but unable to parse output:\n#{data}" if color.nil?
+      #
+      #     color
+      #   rescue Discourse::Utils::CommandError => e
+      #     # Timeout or unable to parse image
+      #     # This can happen due to bad user input - ignore and save
+      #     # an empty string to prevent re-evaluation
+      #     ""
+      #   end
+      "#000000"
     end
 
     if persisted?

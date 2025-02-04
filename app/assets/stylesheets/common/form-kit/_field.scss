@@ -5,6 +5,10 @@
     width: var(--form-kit-medium-input);
   }
 
+  &.--large {
+    width: var(--form-kit-large-input);
+  }
+
   &.--full {
     width: 100%;
   }

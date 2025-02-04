@@ -1,0 +1,28 @@
+.admin-config-area-branding {
+  &__logo {
+    width: 100%;
+
+    .admin-config-area-card__content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+      align-items: flex-start;
+    }
+
+    // #control-dark_logo_required {
+    //   width: 100%;
+    //
+    //   .form-kit__container-title {
+    //     display: flex;
+    //     flex-direction: column;
+    //   }
+    // }
+  }
+}
+
+.admin-config-area-card-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  align-items: flex-start;
+}
