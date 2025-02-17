@@ -46,6 +46,7 @@ export default class AdminAreaSettings extends Component {
           categories: this.args.categories,
         },
       });
+      console.log("result", result);
       this.settings = [
         {
           name: "All",

@@ -27,7 +27,9 @@ export default class AdminConfigAreaCardSection extends Component {
   <template>
     <section class="admin-config-area-card-section" ...attributes>
       <div class="admin-config-area-card-section__header-wrapper">
-        <h4 class="admin-config-area-card__title">{{this.computedHeading}}</h4>
+        <h4
+          class="admin-config-area-card-section__title"
+        >{{this.computedHeading}}</h4>
         {{#if @collapsable}}
           <DButton
             @title="sidebar.toggle_section"

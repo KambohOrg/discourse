@@ -1,5 +1,4 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
 import { cached } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
@@ -7,6 +6,8 @@ import Form from "discourse/components/form";
 
 export default class AdminConfigAreasBrandingForm extends Component {
   @service siteSettings;
+  @service site;
+
   @action
   submit(args) {
     console.log("args", args);
@@ -28,6 +29,10 @@ export default class AdminConfigAreasBrandingForm extends Component {
       mobile_logo_dark: this.siteSettings.mobile_logo_dark,
       manifest_icon: this.siteSettings.manifest_icon,
       manifest_screenshots: this.siteSettings.manifest_screenshots,
+      apple_touch_icon: this.siteSettings.apple_touch_icon,
+      digest_logo: this.siteSettings.digest_logo,
+      opengraph_image: this.siteSettings.opengraph_image,
+      x_summary_large_image: this.siteSettings.x_summary_large_image,
     };
   }
 

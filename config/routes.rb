@@ -410,7 +410,8 @@ Discourse::Application.routes.draw do
         get "group-permissions" => "site_settings#index"
 
         #TODO
-        get "branding" => "site_settings#index"
+        get "branding" => "branding_controller#index"
+        put "branding" => "branding_controller#update"
 
         resources :flags, only: %i[index new create update destroy] do
           put "toggle"
