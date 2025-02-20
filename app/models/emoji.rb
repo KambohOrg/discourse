@@ -151,7 +151,7 @@ class Emoji
   end
 
   def self.emojis_db
-    @emojis_db ||= File.open(emojis_db_file, "r:UTF-8") { |f| JSON.parse(f.read) }
+    @emojis_db ||= Emoji.parse_emoji_file(emojis_db_file)
   end
 
   def self.translations_db_file
@@ -159,7 +159,7 @@ class Emoji
   end
 
   def self.translations_db
-    @translations_db ||= File.open(translations_db_file, "r:UTF-8") { |f| JSON.parse(f.read) }
+    @translations_db ||= Emoji.parse_emoji_file(translations_db_file)
   end
 
   def self.tonable_emojis_db_file
@@ -167,7 +167,7 @@ class Emoji
   end
 
   def self.tonable_emojis_db
-    @tonable_emojis_db ||= File.open(tonable_emojis_db_file, "r:UTF-8") { |f| JSON.parse(f.read) }
+    @tonable_emojis_db ||= Emoji.parse_emoji_file(tonable_emojis_db_file)
   end
 
   def self.aliases_db_file
@@ -175,7 +175,7 @@ class Emoji
   end
 
   def self.aliases_db
-    @aliases_db ||= File.open(aliases_db_file, "r:UTF-8") { |f| JSON.parse(f.read) }
+    @aliases_db ||= Emoji.parse_emoji_file(aliases_db_file)
   end
 
   def self.search_aliases_db_file
@@ -183,7 +183,7 @@ class Emoji
   end
 
   def self.search_aliases_db
-    @search_aliases_db ||= File.open(search_aliases_db_file, "r:UTF-8") { |f| JSON.parse(f.read) }
+    @search_aliases_db ||= Emoji.parse_emoji_file(search_aliases_db_file)
   end
 
   def self.load_standard
@@ -360,5 +360,9 @@ class Emoji
 
   def self.sanitize_emoji_name(name)
     name.gsub(/[^a-z0-9\+\-]+/i, "_").gsub(/_{2,}/, "_").downcase
+  end
+
+  def self.parse_emoji_file(file)
+    File.open(file, "r:UTF-8") { |f| JSON.parse(f.read) }
   end
 end
